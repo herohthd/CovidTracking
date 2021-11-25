@@ -3,10 +3,8 @@ from scrapy_splash import SplashRequest
 
 class ProvinceSpider(scrapy.Spider):
     name = 'province'
-    allowed_domains = ['vnexpress.net/covid-19/vaccine']
-    start_urls = ['https://vnexpress.net/covid-19/vaccine']
 
-    def start_request(self):
+    def start_requests(self):
         url = "https://vnexpress.net/covid-19/vaccine"
 
         yield SplashRequest(url=url,callback=self.parse)
@@ -19,5 +17,5 @@ class ProvinceSpider(scrapy.Spider):
                 'province_population':province.xpath(".//li[2]/text()").get(),
                 'province_expected_distribution':province.xpath(".//li[3]/text()").get(),
                 'province_actual_distribution':province.xpath(".//li[4]/text()").get(),
-                'province_distribution_percentage':province.xpath(".//li[5]/text()").get(),
+                'province_distribution_percentage':province.xpath(".//li[5]/div/div/span/text()").get(),
             }

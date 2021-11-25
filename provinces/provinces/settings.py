@@ -12,18 +12,19 @@ BOT_NAME = 'provinces'
 SPIDER_MODULES = ['provinces.spiders']
 NEWSPIDER_MODULE = 'provinces.spiders'
 
-#Settings for ScrapySplash:
-
-SPLASH_URL = 'http://localhost:8050'
+# uncomment `DOWNLOADER_MIDDLEWARES` and add this settings to it
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
 }
-SPIDER_MIDDLEWARES = {
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
-}
+
+# url of splash server
+SPLASH_URL = 'http://localhost:8050'
+
+# and some splash variables
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'provinces (+http://www.yourdomain.com)'
 
