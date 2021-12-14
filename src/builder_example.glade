@@ -9,8 +9,7 @@
         <property name="use-action-appearance">False</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
-        <property name="receives-default">True</property>
-        <property name="use-action-appearance">False</property>
+        <property name="receives-default">True</property>        <property name="use-action-appearance">False</property>
         <signal name="pressed" handler="onButtonPressed" swapped="no"/>
       </object>
     </child>
