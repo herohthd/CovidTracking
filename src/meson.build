@@ -29,6 +29,7 @@ covidtracking_sources = [
   '__init__.py',
   'main.py',
   'window.py',
+  'vaccine.py',
 ]
 
 install_data(covidtracking_sources, install_dir: moduledir)

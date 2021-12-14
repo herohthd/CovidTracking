@@ -1,13 +1,14 @@
 
 import sys
 import gi
+import os
+import json
 
 gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk, Gio
 
 from .window import CovidtrackingWindow
-
 
 class Application(Gtk.Application):
     def __init__(self):
@@ -19,7 +20,6 @@ class Application(Gtk.Application):
         if not win:
             win = CovidtrackingWindow(application=self)
         win.present()
-
 
 def main(version):
     app = Application()
