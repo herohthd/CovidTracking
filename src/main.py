@@ -1,8 +1,5 @@
-
 import sys
 import gi
-import os
-import json
 
 gi.require_version('Gtk', '3.0')
 
