@@ -4,8 +4,9 @@
   <requires lib="gtk+" version="3.24"/>
   <template class="CovidtrackingWindow" parent="GtkApplicationWindow">
     <property name="can_focus">False</property>
-    <property name="default_width">600</property>
-    <property name="default_height">300</property>
+    <property name="window_position">center</property>
+    <property name="default_width">1000</property>
+    <property name="default_height">1000</property>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="header_bar">
         <property name="visible">True</property>
@@ -15,59 +16,352 @@
       </object>
     </child>
     <child>
-      <object class="GtkFixed" id="fixed1">
+      <object class="GtkScrolledWindow" id="scroll_window">
+        <property name="width_request">600</property>
+        <property name="height_request">500</property>
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can_focus">True</property>
+        <property name="hscrollbar_policy">always</property>
+        <property name="vscrollbar_policy">always</property>
+        <property name="shadow_type">in</property>
         <child>
-          <object class="GtkStack" id="stk1">
-            <property name="width_request">745</property>
-            <property name="height_request">452</property>
+          <object class="GtkViewport">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="hscroll_policy">natural</property>
+            <property name="vscroll_policy">natural</property>
             <child>
-              <object class="GtkFixed" id="news">
+              <object class="GtkFixed" id="fixed1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkStack" id="stk1">
+                    <property name="width_request">745</property>
+                    <property name="height_request">452</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkFixed" id="news">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="name">news</property>
+                        <property name="title" translatable="yes">News</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="infor">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="name">infor</property>
+                        <property name="title" translatable="yes">Infor</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="vaccine">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkGrid" id="vaccine_grid">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="border_width">2</property>
+                            <child>
+                              <object class="GtkLabel" id="title1">
+                                <property name="width_request">100</property>
+                                <property name="height_request">57</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Vaccine number in Vietnam</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="vaccinated_title">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Num of vaccinated people</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="vaccinated_number">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="vaccinated_percentage">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">3</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="two_dose_title">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Num of 2 dose people</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="two_dose_number">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="top_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="two_dose_percentage">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="top_attach">3</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="one_dose_title">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Num of 1 dose people</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">4</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="one_dose_number">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">4</property>
+                                <property name="top_attach">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="one_dose_percentage">
+                                <property name="width_request">100</property>
+                                <property name="height_request">45</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">4</property>
+                                <property name="top_attach">3</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">80</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkGrid">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="enough_dose_number">
+                                <property name="width_request">296</property>
+                                <property name="height_request">35</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkProgressBar" id="progress_bar">
+                                <property name="width_request">680</property>
+                                <property name="height_request">33</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="show_text">True</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">326</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkGrid">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkImage" id="top_vaccinated_provinces">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="margin_right">50</property>
+                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/top_vaccinated_provinces.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkImage" id="least_vaccinated_provinces">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/least_vaccinated_provinces.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">450</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkGrid">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_bottom">50</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/top_vaccinated_provinces.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/least_vaccinated_provinces.png</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">900</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">vaccine</property>
+                        <property name="title" translatable="yes">Vaccine</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="y">40</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkStackSwitcher" id="switch1">
+                    <property name="width_request">100</property>
+                    <property name="height_request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="stack">stk1</property>
+                  </object>
+                </child>
               </object>
-              <packing>
-                <property name="name">news</property>
-                <property name="title" translatable="yes">News</property>
-              </packing>
             </child>
-            <child>
-              <object class="GtkFixed" id="infor">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-              </object>
-              <packing>
-                <property name="name">infor</property>
-                <property name="title" translatable="yes">Infor</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkFixed" id="vaccine">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-              </object>
-              <packing>
-                <property name="name">vaccine</property>
-                <property name="title" translatable="yes">Vaccine</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="y">40</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkStackSwitcher" id="swtich1">
-            <property name="width_request">100</property>
-            <property name="height_request">40</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="stack">stk1</property>
           </object>
         </child>
       </object>
