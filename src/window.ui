@@ -78,7 +78,7 @@
                                 <property name="height_request">57</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Vaccine number in Vietnam</property>
+                                <property name="label" translatable="yes">Vaccination data</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -91,7 +91,7 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Num of vaccinated people</property>
+                                <property name="label" translatable="yes">People vaccinated</property>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -128,7 +128,7 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Num of 2 dose people</property>
+                                <property name="label" translatable="yes">Fully vaccinated</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -165,7 +165,7 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Num of 1 dose people</property>
+                                <property name="label" translatable="yes">1 dose</property>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -280,7 +280,6 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="margin_right">50</property>
-                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/top_vaccinated_provinces.png</property>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -291,7 +290,6 @@
                               <object class="GtkImage" id="least_vaccinated_provinces">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/least_vaccinated_provinces.png</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -305,38 +303,35 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkGrid">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
+                          <object class="GtkBox" id="distribution">
+                            <property name="width_request">700</property>
+                            <property name="height_request">800</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="margin_bottom">50</property>
+                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkImage">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/top_vaccinated_provinces.png</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkImage">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="pixbuf">/home/huydq/Projects/CovidTracking/src/images/least_vaccinated_provinces.png</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">0</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">900</property>
+                            <property name="y">950</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="vaccination">
+                            <property name="width_request">700</property>
+                            <property name="height_request">800</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1000</property>
+                            <property name="y">950</property>
                           </packing>
                         </child>
                       </object>
