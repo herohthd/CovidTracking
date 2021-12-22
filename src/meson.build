@@ -30,6 +30,8 @@ covidtracking_sources = [
   'main.py',
   'window.py',
   'images/vaccine.py',
+  'images/top_provinces.py',
+  'images/least_provinces.py',
 ]
 
 install_data(covidtracking_sources, install_dir: moduledir)

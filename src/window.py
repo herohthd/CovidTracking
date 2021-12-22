@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 import gi
+import matplotlib.pyplot as plt
 
 gi.require_version("Gtk", "3.0")
 gi.require_version('WebKit2', '4.0')
 from gi.repository import Gtk
 from gi.repository import WebKit2
 from .vaccine import list
-
+from .top_provinces import plt
 
 @Gtk.Template(resource_path='/org/example/App/window.ui')
 class CovidtrackingWindow(Gtk.ApplicationWindow):

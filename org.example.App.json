@@ -22,6 +22,14 @@
         "*.a"
     ],
     "modules" : [
+    	"qhull.json",
+    	"python3-setuptools.json",
+    	"python3-python-dateutil.json",
+    	"python3-cppy.json",
+    	"python3-certifi.json",
+    	"python3-numpy.json",
+    	"python3-pandas.json",
+    	"python3-matplotlib.json",
         {
             "name" : "covidtracking",
             "builddir" : true,

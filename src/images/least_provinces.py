@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from vaccine import top_vaccinated_provinces,least_vaccinated_provinces
+from .vaccine import top_vaccinated_provinces,least_vaccinated_provinces
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
@@ -43,5 +43,5 @@ for Y,X in enumerate(df1.two_dose_percentage):
     ax1.annotate(X,xy=(X,Y))
 ax1.set_title('Least vaccinated provinces (Only 18+)')
 plt.savefig("least_vaccinated_provinces.png", bbox_inches='tight')
-plt.show()
+
 
