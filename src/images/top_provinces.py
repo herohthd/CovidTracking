@@ -67,6 +67,6 @@ ax.invert_yaxis()
 ax.set_xlabel('Percentage')
 for Y,X in enumerate(df.two_dose_percentage):
     ax.annotate(X,xy=(X,Y))
-ax.set_title('Top vaccinated provinces(Only 18+)')
+ax.set_title('Top fully vaccinated provinces(Only >18)')
 plt.savefig("top_vaccinated_provinces.png", bbox_inches='tight')
 plt.show()

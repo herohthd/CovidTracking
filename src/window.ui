@@ -165,7 +165,7 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">1 dose</property>
+                                <property name="label" translatable="yes">Partially vaccinated</property>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -305,23 +305,26 @@
                         <child>
                           <object class="GtkBox" id="distribution">
                             <property name="width_request">700</property>
-                            <property name="height_request">800</property>
+                            <property name="height_request">900</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="orientation">vertical</property>
                             <child>
                               <placeholder/>
                             </child>
+                            <child>
+                              <placeholder/>
+                            </child>
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">950</property>
+                            <property name="y">960</property>
                           </packing>
                         </child>
                         <child>
                           <object class="GtkBox" id="vaccination">
                             <property name="width_request">700</property>
-                            <property name="height_request">800</property>
+                            <property name="height_request">900</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="orientation">vertical</property>
@@ -331,7 +334,49 @@
                           </object>
                           <packing>
                             <property name="x">1000</property>
-                            <property name="y">950</property>
+                            <property name="y">960</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="vaccination_table">
+                            <property name="width_request">1470</property>
+                            <property name="height_request">500</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">1800</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="dose_available_label">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">Distribution map</property>
+                          </object>
+                          <packing>
+                            <property name="x">500</property>
+                            <property name="y">920</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="second_dose_label">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">Vaccination map</property>
+                          </object>
+                          <packing>
+                            <property name="x">1300</property>
+                            <property name="y">920</property>
                           </packing>
                         </child>
                       </object>
