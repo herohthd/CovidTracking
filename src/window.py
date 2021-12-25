@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 import gi
+import numpy as np
 import matplotlib.pyplot as plt
-
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_gtk3agg import (
+    FigureCanvasGTK3Agg as FigureCanvas)
 gi.require_version("Gtk", "3.0")
 gi.require_version('WebKit2', '4.0')
 from gi.repository import Gtk
 from gi.repository import WebKit2
 from .vaccine import list
-from .top_provinces import plt
+from .top_provinces import canvas
+from .least_provinces import canvas1
 
 @Gtk.Template(resource_path='/org/example/App/window.ui')
 class CovidtrackingWindow(Gtk.ApplicationWindow):
@@ -26,13 +30,18 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
     enough_dose_number = Gtk.Template.Child()
     progress_bar = Gtk.Template.Child()
 
-    top_vaccinated_provinces = Gtk.Template.Child()
-    least_vaccinated_provinces = Gtk.Template.Child()
-
     distribution = Gtk.Template.Child()
     vaccination = Gtk.Template.Child()
 
     vaccination_table = Gtk.Template.Child()
+
+    total_dose = Gtk.Template.Child()
+    dose_by_day = Gtk.Template.Child()
+
+    top_provinces = Gtk.Template.Child()
+    least_provinces = Gtk.Template.Child()
+    # reload_btn = Gtk.Template.Child()
+    # reload_spinner = Gtk.Template.Child()
     # For vaccine
 
     def __init__(self, **kwargs):
@@ -50,10 +59,6 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         self.enough_dose_number.set_text("Fully vaccinated population: "+list[1]["two_dose_population"])
         self.progress_bar.set_fraction(progress)
 
-        self.top_vaccinated_provinces.set_from_file("/home/huydq/Projects/CovidTracking/src/images/top_vaccinated_provinces.png")
-        self.least_vaccinated_provinces.set_from_file("/home/huydq/Projects/CovidTracking/src/images/least_vaccinated_provinces.png")
-
-
         self.webview = WebKit2.WebView()
         uri = "https://api.ncovtrack.com/vaccine/vietnam/provinces?metric=doses_available&showTable=false&showMap=true"
         self.webview.load_uri(uri)
@@ -70,7 +75,29 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         # self.webview2.run_javascript_in_world('document.getElementsByClassName("text-lightMode  m-0 p-2")[0].style.display = "none" ','',None,None,None)
         self.vaccination_table.pack_start(self.webview2,True,True,0)
 
+        self.top_provinces.pack_start(canvas,True,True,0)
+        self.least_provinces.pack_start(canvas1,True,True,0)
+        self.total_dose.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/total_dose.png")
+        self.dose_by_day.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/1month_daily_dose.png")
+
         self.show_all()
+
+    # @Gtk.Template.Callback()
+    # def on_reload_btn_clicked(self,button):
+    #      name = "province"
+    #      subprocess.call(["scrapy",'crawl','province','-O /home/huydq/ITSS Linux/CovidTracking/provinces/province.json'],cwd='/home/huydq/ITSS Linux/CovidTracking/provinces')
+
+    @Gtk.Template.Callback()
+    def on_1month_btn_clicked(self,button):
+         self.dose_by_day.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/1month_daily_dose.png")
+
+    @Gtk.Template.Callback()
+    def on_3month_btn_clicked(self,button):
+         self.dose_by_day.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/3month_daily_dose.png")
+
+    @Gtk.Template.Callback()
+    def on_total_btn_clicked(self,button):
+         self.dose_by_day.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/total_daily_dose.png")
 
 
 

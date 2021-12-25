@@ -32,6 +32,10 @@ covidtracking_sources = [
   'images/vaccine.py',
   'images/top_provinces.py',
   'images/least_provinces.py',
+  'images/total_dose.py',
+  # 'images/1month_daily_dose.py',
+  # 'images/3month_daily_dose.py',
+  # 'images/total_daily_dose.py',
 ]
 
 install_data(covidtracking_sources, install_dir: moduledir)
