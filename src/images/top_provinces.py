@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_gtk3agg import (
+    FigureCanvasGTK3Agg as FigureCanvas)
 import numpy as np
 import pandas as pd
-from vaccine import top_vaccinated_provinces,least_vaccinated_provinces
+from .vaccine import top_vaccinated_provinces,least_vaccinated_provinces
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
@@ -67,6 +70,7 @@ ax.invert_yaxis()
 ax.set_xlabel('Percentage')
 for Y,X in enumerate(df.two_dose_percentage):
     ax.annotate(X,xy=(X,Y))
-ax.set_title('Top vaccinated provinces(Only 18+)')
-plt.savefig("top_vaccinated_provinces.png", bbox_inches='tight')
-plt.show()
+ax.set_title('Top fully vaccinated provinces(Only >18)')
+canvas = FigureCanvas(fig)  # a Gtk.DrawingArea
+canvas.set_size_request(600, 400)
+

@@ -5,7 +5,7 @@ class VaccineSpider(scrapy.Spider):
     name = 'vaccine'
 
     def start_requests(self):
-        url = "https://vnexpress.net/covid-19/vaccine"
+        url = "https://e.vnexpress.net/covid-19/vaccine"
 
         yield SplashRequest(url=url,callback=self.parse)
 
