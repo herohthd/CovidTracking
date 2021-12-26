@@ -1,6 +1,6 @@
 import scrapy
 from scrapy_splash import SplashRequest
-
+from scrapy.crawler import CrawlerProcess
 class ProvinceSpider(scrapy.Spider):
     name = 'province'
 
@@ -19,3 +19,14 @@ class ProvinceSpider(scrapy.Spider):
                 'province_actual_distribution':province.xpath(".//li[4]/text()").get(),
                 'province_distribution_percentage':province.xpath(".//li[5]/div/div/span/text()").get(),
             }
+
+# process = CrawlerProcess(settings={
+#     'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)',
+#     "FEEDS": {
+#         "province.json": {"format": "json"},
+#     },
+# })
+
+# process.crawl(ProvinceSpider)
+# process.start()
+

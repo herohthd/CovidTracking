@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import gi
+import subprocess
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
@@ -9,7 +10,7 @@ gi.require_version("Gtk", "3.0")
 gi.require_version('WebKit2', '4.0')
 from gi.repository import Gtk
 from gi.repository import WebKit2
-from .vaccine import list
+from .vaccine import list,cases
 from .top_provinces import canvas
 from .least_provinces import canvas1
 
@@ -40,13 +41,26 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
 
     top_provinces = Gtk.Template.Child()
     least_provinces = Gtk.Template.Child()
-    # reload_btn = Gtk.Template.Child()
-    # reload_spinner = Gtk.Template.Child()
+    reload_btn = Gtk.Template.Child()
+    reload_spinner = Gtk.Template.Child()
+
     # For vaccine
+
+    # For cases
+    total_cases = Gtk.Template.Child()
+    today_cases = Gtk.Template.Child()
+    total_recover = Gtk.Template.Child()
+    today_recover = Gtk.Template.Child()
+    total_death = Gtk.Template.Child()
+    today_death = Gtk.Template.Child()
+    total_treated = Gtk.Template.Child()
+    today_treated = Gtk.Template.Child()
+    # For cases
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        # Vaccine
         self.vaccinated_number.set_text(list[0]["vaccinated_population"])
         self.vaccinated_percentage.set_text(list[0]["vaccinated_percentage"])
         self.two_dose_number.set_text(list[1]["two_dose_population"])
@@ -79,13 +93,25 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         self.least_provinces.pack_start(canvas1,True,True,0)
         self.total_dose.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/total_dose.png")
         self.dose_by_day.set_from_file("/home/huydq/ITSS Linux/CovidTracking/src/images/1month_daily_dose.png")
+        # Vaccine
+
+        # Case
+        self.total_cases.set_text(cases[0]['total_cases'])
+        self.today_cases.set_text(cases[0]['today_cases'])
+        self.total_recover.set_text(cases[0]['total_recover'])
+        self.today_recover.set_text(cases[0]['today_recover'])
+        self.total_death.set_text(cases[0]['total_death'])
+        self.today_death.set_text(cases[0]['today_death'])
+        self.total_treated.set_text(cases[0]['total_treated'])
+        self.today_treated.set_text(cases[0]['today_treated'])
+        # Case
 
         self.show_all()
 
-    # @Gtk.Template.Callback()
-    # def on_reload_btn_clicked(self,button):
-    #      name = "province"
-    #      subprocess.call(["scrapy",'crawl','province','-O /home/huydq/ITSS Linux/CovidTracking/provinces/province.json'],cwd='/home/huydq/ITSS Linux/CovidTracking/provinces')
+    @Gtk.Template.Callback()
+    def on_reload_btn_clicked(self,button):
+         name = "province"
+         subprocess.call(["scrapy",'crawl','province','-O /home/huydq/ITSS Linux/CovidTracking/provinces/province.json'],cwd='/home/huydq/ITSS Linux/CovidTracking/provinces',shell=True)
 
     @Gtk.Template.Callback()
     def on_1month_btn_clicked(self,button):

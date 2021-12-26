@@ -30,6 +30,7 @@
     	"python3-numpy.json",
     	"python3-pandas.json",
     	"python3-matplotlib.json",
+    	"python3-scrapy.json",
         {
             "name" : "covidtracking",
             "builddir" : true,
