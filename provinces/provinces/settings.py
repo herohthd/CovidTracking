@@ -26,7 +26,7 @@ SPLASH_URL = 'http://localhost:8050'
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'provinces (+http://www.yourdomain.com)'
+USER_AGENT = 'testing (http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True

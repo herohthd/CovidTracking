@@ -1,0 +1,8 @@
+pyopenssl==21.0.0
+pyasn1
+cryptography==3.3.2
+Scrapy==2.5.1
+scrapy-splash==0.8.0
+setuptools-scm==6.3.2
+cffi
+

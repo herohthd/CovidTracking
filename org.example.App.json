@@ -23,7 +23,9 @@
     ],
     "modules" : [
     	"qhull.json",
-    	"python3-setuptools.json",
+    	"python3-setuptools_rust.json",
+	"pypi-dependencies.json",
+
     	"python3-python-dateutil.json",
     	"python3-cppy.json",
     	"python3-certifi.json",
