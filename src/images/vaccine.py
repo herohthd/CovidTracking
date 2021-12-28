@@ -11,6 +11,8 @@ vaccine_json = os.path.join(provinces_d,"vaccine.json")
 province_json = os.path.join(provinces_d,"province.json")
 dose_json = os.path.join(provinces_d,"dose.json")
 case_json = os.path.join(provinces_d,"case.json")
+case_by_day_json = os.path.join(provinces_d,"caseByDay.json")
+death_by_day_json = os.path.join(provinces_d,"deathByDay.json")
 
 with open(dose_json,"r") as file:
     doses = json.load(file)
@@ -23,6 +25,12 @@ with open(province_json,"r") as file:
 
 with open(case_json,"r") as file:
     cases = json.load(file)
+
+with open(case_by_day_json,"r") as file:
+    case_by_day = json.load(file)
+
+with open(death_by_day_json,"r") as file:
+    death_by_day = json.load(file)
 
 ONE_MILLION = 1000000
 ONE_THOUSAND = 1000

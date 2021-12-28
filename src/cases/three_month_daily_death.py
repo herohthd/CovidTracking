@@ -5,24 +5,25 @@ from matplotlib.backends.backend_gtk3cairo import FigureCanvasGTK3Cairo as Figur
 import datetime as dt
 import pandas as pd
 import numpy as np
-from .vaccine import doses
-
+from .case import death_by_day
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
 
 plt.rcdefaults()
 fig,ax = plt.subplots()
-# Format doses
-xs = np.array([dose['date'] for dose in reversed(doses)])
-ys = np.array([dose['daily_doses'] for dose in reversed(doses)])
-values = {'date':xs,
-          'daily_doses':ys}
+
+# Format cases
+xs = np.array([case['date'] for case in reversed(death_by_day)])
+ys = np.array([case['cases'] for case in reversed(death_by_day)])
+values = {'date':xs[-90::],
+          'daily_death':ys[-90::]}
 df = pd.DataFrame(values)
 pd.plotting.register_matplotlib_converters()
 
 # Format the graph
-ax.set_xlim(pd.Timestamp(df['date'][0]), pd.Timestamp(df['date'][df.index[-1]]))
+# ax = plt.gca()
+ax.set_xlim(pd.Timestamp(df['date'][0]), pd.Timestamp(df['date'][89]))
 ax.xaxis.set_major_formatter(DateFormatter('%d/%m'))
 # ax.xaxis.set_major_locator(DayLocator(interval=25))
 
@@ -33,9 +34,10 @@ top_side = ax.spines["top"]
 top_side.set_visible(False)
 
 
-ax.bar(xs, ys,color = "#06692e",linewidth=0.3)
-ax.set_title('Daily Covid-19 vaccination doses')
+ax.bar(xs[-90::], ys[-90::],color = "#6d6d6d",linewidth=0.3)
+ax.set_title('Daily Covid-19 vaccination death')
 plt.gcf().autofmt_xdate()
 
-total_daily_dose_canvas = FigureCanvas(fig)  # a Gtk.DrawingArea
-total_daily_dose_canvas.set_size_request(600, 400)
+three_month_death_canvas = FigureCanvas(fig)  # a Gtk.DrawingArea
+three_month_death_canvas.set_size_request(600, 400)
+
