@@ -1,6 +1,5 @@
 import scrapy
 from scrapy_splash import SplashRequest
-from scrapy.crawler import CrawlerProcess
 
 class CaseByDaySpider(scrapy.Spider):
     name = 'caseByDay'

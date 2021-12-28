@@ -266,7 +266,7 @@
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">300</property>
+                            <property name="y">1000</property>
                           </packing>
                         </child>
                         <child>
@@ -310,7 +310,7 @@
                           </object>
                           <packing>
                             <property name="x">1000</property>
-                            <property name="y">300</property>
+                            <property name="y">1000</property>
                           </packing>
                         </child>
                         <child>
@@ -326,7 +326,7 @@
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">900</property>
+                            <property name="y">1500</property>
                           </packing>
                         </child>
                         <child>
@@ -342,7 +342,7 @@
                           </object>
                           <packing>
                             <property name="x">1000</property>
-                            <property name="y">900</property>
+                            <property name="y">1500</property>
                           </packing>
                         </child>
                         <child>
@@ -358,7 +358,7 @@
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">1730</property>
+                            <property name="y">2350</property>
                           </packing>
                         </child>
                         <child>
@@ -396,6 +396,38 @@
                           <packing>
                             <property name="x">600</property>
                             <property name="y">200</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="top_case_provinces">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">230</property>
+                            <property name="y">400</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="least_case_provinces">
+                            <property name="width_request">100</property>
+                            <property name="height_request">80</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1000</property>
+                            <property name="y">400</property>
                           </packing>
                         </child>
                       </object>
@@ -661,7 +693,7 @@
                           </object>
                           <packing>
                             <property name="x">230</property>
-                            <property name="y">2330</property>
+                            <property name="y">2350</property>
                           </packing>
                         </child>
                         <child>
@@ -721,33 +753,6 @@
                           <packing>
                             <property name="x">1000</property>
                             <property name="y">450</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="reload_btn">
-                            <property name="label" translatable="yes">Reload data</property>
-                            <property name="width_request">50</property>
-                            <property name="height_request">30</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <signal name="clicked" handler="on_reload_btn_clicked" swapped="no"/>
-                          </object>
-                          <packing>
-                            <property name="x">1600</property>
-                            <property name="y">20</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkSpinner" id="reload_spinner">
-                            <property name="width_request">50</property>
-                            <property name="height_request">30</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                          </object>
-                          <packing>
-                            <property name="x">1650</property>
-                            <property name="y">20</property>
                           </packing>
                         </child>
                         <child>

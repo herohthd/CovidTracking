@@ -44,6 +44,8 @@ covidtracking_sources = [
   'cases/one_month_daily_death.py',
   'cases/three_month_daily_death.py',
   'cases/total_daily_death.py',
+  'cases/top_case_province.py',
+  'cases/least_case_province.py',
 ]
 
 install_data(covidtracking_sources, install_dir: moduledir)

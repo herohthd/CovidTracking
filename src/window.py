@@ -23,6 +23,8 @@ from .total_daily_case import total_daily_case_canvas
 from .one_month_daily_death import one_month_death_canvas
 from .three_month_daily_death import three_month_death_canvas
 from .total_daily_death import total_daily_death_canvas
+from .top_case_province import top_case_canvas
+from .least_case_province import least_case_canvas
 
 @Gtk.Template(resource_path='/org/example/App/window.ui')
 class CovidtrackingWindow(Gtk.ApplicationWindow):
@@ -51,8 +53,6 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
     dose_by_day_box =Gtk.Template.Child()
     top_provinces = Gtk.Template.Child()
     least_provinces = Gtk.Template.Child()
-    reload_btn = Gtk.Template.Child()
-    reload_spinner = Gtk.Template.Child()
 
     # For vaccine
 
@@ -77,6 +77,9 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
 
     recover_progess_bar = Gtk.Template.Child()
     recover_number = Gtk.Template.Child()
+
+    top_case_provinces = Gtk.Template.Child()
+    least_case_provinces = Gtk.Template.Child()
     # For cases
 
     def __init__(self, **kwargs):
@@ -177,15 +180,18 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         recover_progress = float(cases[0]['total_recover'].replace(".",""))/float(cases[0]['total_cases'].replace(".",""))
         self.recover_number.set_text("Recover number: "+ cases[0]['total_recover'])
         self.recover_progess_bar.set_fraction(recover_progress)
+
+        self.top_case_provinces.pack_start(top_case_canvas,True,True,0)
+        self.least_case_provinces.pack_start(least_case_canvas,True,True,0)
         # Case
 
         self.show_all()
 
-    @Gtk.Template.Callback()
-    def on_reload_btn_clicked(self,button):
-         name = "province"
+    # @Gtk.Template.Callback()
+    # def on_reload_btn_clicked(self,button):
+    #      name = "province"
          # subprocess.call(["scrapy",'crawl','province','-O /home/huydq/ITSS Linux/CovidTracking/provinces/province.json'],cwd='/home/huydq/ITSS Linux/CovidTracking/provinces',shell=True)
-         subprocess.call('python3 province.py',cwd="/home/huydq/ITSS Linux/CovidTracking/provinces/provinces/spiders", shell=True)
+    #      subprocess.call('python3 province.py',cwd="/home/huydq/ITSS Linux/CovidTracking/provinces/provinces/spiders", shell=True)
 
 
 
