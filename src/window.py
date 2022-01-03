@@ -32,7 +32,7 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
 
 
     # For vaccine
-
+    vaccine_date = Gtk.Template.Child()
     vaccinated_number = Gtk.Template.Child()
     vaccinated_percentage = Gtk.Template.Child()
     two_dose_number = Gtk.Template.Child()
@@ -57,6 +57,7 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
     # For vaccine
 
     # For cases
+    case_date = Gtk.Template.Child()
     total_cases = Gtk.Template.Child()
     today_cases = Gtk.Template.Child()
     total_recover = Gtk.Template.Child()
@@ -86,6 +87,7 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         super().__init__(**kwargs)
 
         # Vaccine
+        self.vaccine_date.set_text(cases[0]['date'])
         self.vaccinated_number.set_text(list[0]["vaccinated_population"])
         self.vaccinated_percentage.set_text(list[0]["vaccinated_percentage"])
         self.two_dose_number.set_text(list[1]["two_dose_population"])
@@ -132,6 +134,7 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         # Vaccine
 
         # Case
+        self.case_date.set_text(cases[0]['date'])
         self.total_cases.set_text(cases[0]['total_cases'])
         self.today_cases.set_text(cases[0]['today_cases'])
         self.total_recover.set_text(cases[0]['total_recover'])
@@ -189,9 +192,8 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
 
     # @Gtk.Template.Callback()
     # def on_reload_btn_clicked(self,button):
-    #      name = "province"
-         # subprocess.call(["scrapy",'crawl','province','-O /home/huydq/ITSS Linux/CovidTracking/provinces/province.json'],cwd='/home/huydq/ITSS Linux/CovidTracking/provinces',shell=True)
-    #      subprocess.call('python3 province.py',cwd="/home/huydq/ITSS Linux/CovidTracking/provinces/provinces/spiders", shell=True)
+    #      subprocess.call('cd /home/huydq', shell=True)
+    #      subprocess.call(['sh', './crawl.sh'])
 
 
 

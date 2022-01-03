@@ -13,6 +13,7 @@ class CaseSpider(scrapy.Spider):
         cases = response.xpath('//div[@id="total-all"]')
         for case in cases:
             yield{
+                'date':response.xpath('//div[@class="red center mb20"]/text()').get(),
                 'total_cases':case.xpath('.//div[contains(@class,"item-count-vietnam item-nhiem")]/span[@class="number-item"]/text()').get(),
                 'today_cases':case.xpath('.//div[contains(@class,"item-count-vietnam item-nhiem")]/span[@class="today-item"]/text()').get(),
                 'total_recover':case.xpath('.//div[contains(@class,"item-count-vietnam item-khoi")]/span[@class="number-item"]/text()').get(),
