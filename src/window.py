@@ -142,8 +142,10 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         self.total_death.set_text(cases[0]['total_death'])
         self.today_death.set_text(cases[0]['today_death'])
         self.total_treated.set_text(cases[0]['total_treated'])
-        self.today_treated.set_text(cases[0]['today_treated'])
-
+        if cases[0]['today_treated'] is None:
+            self.today_treated.set_text("Công bố hôm qua N/A")
+        else:
+            self.today_treated.set_text(cases[0]['today_treated'])
         self.case_by_day_box.add(one_month_case_canvas)
 
         self.three_month_case_page = Gtk.Box()

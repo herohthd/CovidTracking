@@ -1,5 +1,7 @@
 [
-{"date": "Jan 2, 2022", "total_doses": "152,373,224", "daily_doses": "415,758"},
+{"date": "Jan 4, 2022", "total_doses": "154,005,275", "daily_doses": "168,507"},
+{"date": "Jan 3, 2022", "total_doses": "153,836,768", "daily_doses": "939,651"},
+{"date": "Jan 2, 2022", "total_doses": "152,897,117", "daily_doses": "939,651"},
 {"date": "Jan 1, 2022", "total_doses": "151,957,466", "daily_doses": "939,651"},
 {"date": "Dec 31, 2021", "total_doses": "151,017,815", "daily_doses": "939,651"},
 {"date": "Dec 30, 2021", "total_doses": "150,078,164", "daily_doses": "939,651"},
