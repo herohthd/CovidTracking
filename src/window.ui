@@ -64,7 +64,11 @@
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">10</property>
                                 <property name="label" translatable="yes">Covid-19 in Vietnam: statistics</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans Bold 16"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -75,6 +79,12 @@
                               <object class="GtkLabel" id="total_cases">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#ffff39392b2b"/>
+                                  <attribute name="background" value="#ffffffffffff"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -85,6 +95,11 @@
                               <object class="GtkLabel" id="today_cases">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_right">10</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#ffff39392b2b"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -95,7 +110,13 @@
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
                                 <property name="label" translatable="yes">Infected</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#ffff39392b2b"/>
+                                  <attribute name="background" value="#bfff3fff3fff"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -106,7 +127,13 @@
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
                                 <property name="label" translatable="yes">Recover</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                  <attribute name="background" value="#dadaf2f2e2e2"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -117,6 +144,11 @@
                               <object class="GtkLabel" id="total_recover">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -127,6 +159,10 @@
                               <object class="GtkLabel" id="today_recover">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -137,7 +173,13 @@
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
                                 <property name="label" translatable="yes">Death</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#222222222222"/>
+                                  <attribute name="background" value="#e5e5e5e5e5e5"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -148,6 +190,11 @@
                               <object class="GtkLabel" id="total_death">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#222222222222"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -158,6 +205,11 @@
                               <object class="GtkLabel" id="today_death">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_right">10</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#222222222222"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -168,7 +220,13 @@
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
                                 <property name="label" translatable="yes">Retreated</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#e1e184832525"/>
+                                  <attribute name="background" value="#fcfcf2f2e9e9"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -179,6 +237,11 @@
                               <object class="GtkLabel" id="total_treated">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="margin_bottom">5</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#e1e184832525"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -189,6 +252,10 @@
                               <object class="GtkLabel" id="today_treated">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#e1e184832525"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -218,7 +285,7 @@
                             </child>
                           </object>
                           <packing>
-                            <property name="x">600</property>
+                            <property name="x">300</property>
                             <property name="y">80</property>
                           </packing>
                         </child>
@@ -373,6 +440,9 @@
                                 <property name="height_request">35</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -395,7 +465,7 @@
                           </object>
                           <packing>
                             <property name="x">600</property>
-                            <property name="y">200</property>
+                            <property name="y">250</property>
                           </packing>
                         </child>
                         <child>
@@ -436,9 +506,13 @@
                             <property name="height_request">80</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_bottom">10</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Sans Italic 14"/>
+                            </attributes>
                           </object>
                           <packing>
-                            <property name="x">850</property>
+                            <property name="x">750</property>
                             <property name="y">20</property>
                           </packing>
                         </child>
@@ -467,6 +541,9 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Vaccination data</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans Bold 16"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -480,6 +557,11 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">People vaccinated</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                  <attribute name="background" value="#dadaf2f2e2e2"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -492,6 +574,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -504,6 +590,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -517,6 +607,11 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Fully vaccinated</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#f5f5ffffffff"/>
+                                  <attribute name="background" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -529,6 +624,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -541,6 +640,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -554,6 +657,11 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Partially vaccinated</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                  <attribute name="background" value="#dadaf2f2e2e2"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -566,6 +674,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -578,6 +690,10 @@
                                 <property name="height_request">45</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                  <attribute name="foreground" value="#050466662524"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -632,6 +748,9 @@
                                 <property name="height_request">35</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <attributes>
+                                  <attribute name="font-desc" value="Sans 14"/>
+                                </attributes>
                               </object>
                               <packing>
                                 <property name="left_attach">0</property>
@@ -706,32 +825,6 @@
                           <packing>
                             <property name="x">230</property>
                             <property name="y">2330</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="dose_available_label">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Distribution map</property>
-                          </object>
-                          <packing>
-                            <property name="x">500</property>
-                            <property name="y">1450</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="second_dose_label">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Vaccination map</property>
-                          </object>
-                          <packing>
-                            <property name="x">1300</property>
-                            <property name="y">1450</property>
                           </packing>
                         </child>
                         <child>
@@ -833,6 +926,9 @@
                             <property name="height_request">80</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Sans Italic 12"/>
+                            </attributes>
                           </object>
                           <packing>
                             <property name="x">750</property>
