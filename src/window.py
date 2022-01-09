@@ -25,6 +25,10 @@ from .three_month_daily_death import three_month_death_canvas
 from .total_daily_death import total_daily_death_canvas
 from .top_case_province import top_case_canvas
 from .least_case_province import least_case_canvas
+from .news import news
+
+
+NEWS_IMG_DIR = "/home/huydq/ITSS Linux/CovidTracking/news/images/"
 
 @Gtk.Template(resource_path='/org/example/App/window.ui')
 class CovidtrackingWindow(Gtk.ApplicationWindow):
@@ -82,7 +86,12 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
     top_case_provinces = Gtk.Template.Child()
     least_case_provinces = Gtk.Template.Child()
     # For cases
-
+    # For news
+    news_notebook = Gtk.Template.Child()
+    news_box = Gtk.Template.Child()
+    news_box1 = Gtk.Template.Child()
+    news_title = Gtk.Template.Child()
+    # For news
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -190,14 +199,74 @@ class CovidtrackingWindow(Gtk.ApplicationWindow):
         self.least_case_provinces.pack_start(least_case_canvas,True,True,0)
         # Case
 
+        #News
+        self.news_title.set_text("Source:VnExpress "+ cases[0]['date'])
+
+        for i in range(5):
+            label = {}
+            img = {}
+            des = {}
+            box_index = f'box{i}'
+            self.box = {}
+
+
+            if i == 0:
+                for j in range(i*20, i*20 + 20):
+                    index = f'label{j}'
+                    label[index] = Gtk.Button()
+                    label[index] = label[index].new_with_label(news[j]['title'])
+                    label[index].connect("clicked", self.on_news_btn_clicked,news[j]['href'],index)
+                    img[index] = Gtk.Image()
+                    try:
+                        img[index].set_from_file(NEWS_IMG_DIR + news[j]['image_paths'][0])
+                    except:
+                        print(NEWS_IMG_DIR + str(news[j]['image_paths']))
+                    des[index]= Gtk.Label()
+                    des[index].set_text(news[j]['description'])
+                    self.news_box1.pack_start(label[index],True,True,0)
+                    self.news_box1.pack_start(img[index],True,True,0)
+                    self.news_box1.pack_start(des[index],True,True,0)
+            else:
+                # vertical_orientation = Gtk.Orientation(0)
+                self.box[box_index] = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+                for j in range(i*20, i*20 + 20):
+                    index = f'label{j}'
+                    label[index] = Gtk.Button()
+                    label[index] = label[index].new_with_label(news[j]['title'])
+                    label[index].connect("clicked", self.on_news_btn_clicked,news[j]['href'],index)
+                    img[index] = Gtk.Image()
+                    try:
+                        img[index].set_from_file(NEWS_IMG_DIR + news[j]['image_paths'][0])
+                    except:
+                        print(NEWS_IMG_DIR + str(news[j]['image_paths']))
+                    des[index]= Gtk.Label()
+                    des[index].set_text(news[j]['description'])
+
+                    self.box[box_index].pack_start(label[index],True,True,0)
+                    self.box[box_index].pack_start(img[index],True,True,0)
+                    self.box[box_index].pack_start(des[index],True,True,0)
+
+                self.news_notebook.append_page(self.box[box_index],Gtk.Label(f"PAGE {i+1}"))
+
+        #News
         self.show_all()
 
-    # @Gtk.Template.Callback()
-    # def on_reload_btn_clicked(self,button):
-    #      subprocess.call('cd /home/huydq', shell=True)
-    #      subprocess.call(['sh', './crawl.sh'])
 
+    @Gtk.Template.Callback()
+    def on_news_btn_clicked(self,button,href,index):
+        news_window = {}
+        print(href)
+        news_window[index] = NewsWindow(href)
+        news_window[index].show_all()
 
+class NewsWindow(Gtk.Window):
+    def __init__(self,href):
+        Gtk.Window.__init__(self,title="News")
+        self.news_content_area = Gtk.Box()
+        self.news_webview = WebKit2.WebView()
+        self.news_webview.load_uri(href)
+        self.news_content_area.pack_start(self.news_webview,True,True,0)
+        self.add(self.news_content_area)
 
 
 

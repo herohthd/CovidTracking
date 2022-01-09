@@ -25,7 +25,7 @@ with open(case_province_json,"r") as file:
     case_province = json.load(file)
 
 for province in case_province:
-    province['case'] = int(province['case'])
+    province['case'] = int(province['case'].replace(".",""))
 sorted_provinces = sorted(case_province,  key=itemgetter('case'),reverse=True)
 top_case_provinces = sorted_provinces[0:10]
 least_case_provinces = sorted_provinces[53:63]
