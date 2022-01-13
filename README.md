@@ -24,5 +24,6 @@
 - Data visualization: numpy, pandas, matplotlib
 - Auto crawl data using Cron job scheduler
 
-5. Video demo
+5. Video demo:
+
 https://www.youtube.com/watch?v=8-5wNtzmUkM
